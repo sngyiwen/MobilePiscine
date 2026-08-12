@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
   },
   buttonGrid: {
     flex: 2,
-    justifyContent: "flex-end",
-    paddingBottom: 20,
+    justifyContent: "space-evenly",
+    paddingBottom: 0,
     backgroundColor: "white", // temporary
   },
   row: {
@@ -102,9 +102,9 @@ const styles = StyleSheet.create({
   button: {
     width: 44,
     height: 44,
-    borderRadius: 22,
+    // borderRadius: 22,
     backgroundColor: "#eee",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
   },
   buttonText: {

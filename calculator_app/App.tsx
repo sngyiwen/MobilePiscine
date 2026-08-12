@@ -41,6 +41,8 @@ export default function App() {
     } else if (label === "C") {
       setExpression(expression.slice(0, -1));
     } else if (label === "="){
+        console.log("expression being evaluated:", expression);
+
       try{
         const evalResult = Parser.evaluate(expression);
         if(!isFinite(evalResult)){
@@ -121,17 +123,21 @@ const styles = StyleSheet.create({
   expressionText: {
     fontSize: 24,
     color: "#333",
+    width: "100%",       // take full width, don't self-size
+    textAlign: "right",  // align the text content within that fixed width
   },
   resultText: {
     fontSize: 32,
     color: "#000",
     fontWeight: "bold",
+    width: "100%",
+    textAlign: "right",
   },
   displayContainer: {
     flex: 1,
     padding: 10,
     justifyContent: "flex-end",
-    alignItems: "flex-end",
+    // alignItems: "stretch",
     backgroundColor: "grey", // temporary
   },
   buttonGrid: {
