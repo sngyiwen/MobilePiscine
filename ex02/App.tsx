@@ -1,5 +1,5 @@
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity  } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 const buttonRows = [
   ["7", "8", "9", "C", "AC"],
@@ -8,16 +8,21 @@ const buttonRows = [
   ["0", ".", "00", "="],
 ];
 
-function CalcButton({ label, onPress }: { label: string; onPress: (label: string) => void}){
+function CalcButton({
+  label,
+  onPress,
+}: {
+  label: string;
+  onPress: (label: string) => void;
+}) {
   return (
     <TouchableOpacity style={styles.button} onPress={() => onPress(label)}>
       <Text style={styles.buttonText}>{label}</Text>
     </TouchableOpacity>
-  )
+  );
 }
 
 export default function App() {
-
   const handleButtonPress = (label: string) => {
     console.log("button pressed:", label);
   };
@@ -27,7 +32,7 @@ export default function App() {
       <View style={styles.appBar}>
         <Text style={styles.appBarText}>Calculator</Text>
       </View>
-    
+
       <View style={styles.displayContainer}>
         <Text style={styles.expressionText}>0</Text>
         <Text style={styles.resultText}>0</Text>
@@ -37,7 +42,11 @@ export default function App() {
         {buttonRows.map((row, rowIndex) => (
           <View key={rowIndex} style={styles.row}>
             {row.map((label) => (
-              <CalcButton key={label} label={label} onPress={handleButtonPress} />
+              <CalcButton
+                key={label}
+                label={label}
+                onPress={handleButtonPress}
+              />
             ))}
           </View>
         ))}
@@ -52,20 +61,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   appBar: {
-    height: 100,
+    height: 60,
     backgroundColor: "#3f51b5",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 10,
+    paddingTop: 35,
   },
   appBarText: {
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
-  },
-  displayContainer: {
-    padding: 20,
-    alignItems: "flex-end",
   },
   expressionText: {
     fontSize: 24,
@@ -76,26 +81,34 @@ const styles = StyleSheet.create({
     color: "#000",
     fontWeight: "bold",
   },
-  buttonGrid: {
+  displayContainer: {
     flex: 1,
+    padding: 10,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    backgroundColor: "grey", // temporary
+  },
+  buttonGrid: {
+    flex: 2,
     justifyContent: "flex-end",
     paddingBottom: 20,
+    backgroundColor: "white", // temporary
   },
   row: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginVertical: 5,
+    marginVertical: 3,
   },
   button: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     backgroundColor: "#eee",
     justifyContent: "center",
     alignItems: "center",
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 16,
     color: "#333",
   },
 });
