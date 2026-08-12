@@ -13,7 +13,6 @@ const buttonRows = [
 
 const operators = ["+", "-", "*", "/"];
 
-
 function CalcButton({
   label,
   onPress,
