@@ -28,6 +28,11 @@ export default function App() {
         <Text style={styles.appBarText}>Calculator</Text>
       </View>
     
+      <View style={styles.displayContainer}>
+        <Text style={styles.expressionText}>0</Text>
+        <Text style={styles.resultText}>0</Text>
+      </View>
+
       <View style={styles.buttonGrid}>
         {buttonRows.map((row, rowIndex) => (
           <View key={rowIndex} style={styles.row}>
