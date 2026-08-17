@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Parser } from "expr-eval";
 import { useState } from "react";
 
-
 const buttonRows = [
   ["7", "8", "9", "C", "AC"],
   ["4", "5", "6", "+", "-"],
